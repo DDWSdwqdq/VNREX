@@ -1,0 +1,2 @@
+# VNREX
+GAL翻译器、离线OCR、离线TTS

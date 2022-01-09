@@ -1,0 +1,208 @@
+﻿<Page
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+       xmlns:pu="clr-namespace:Panuon.UI.Silver;assembly=Panuon.UI.Silver"
+     
+      xmlns:local="clr-namespace:UIBrowser"
+      xmlns:System="clr-namespace:System;assembly=mscorlib" x:Class="UIBrowser.HookPage"
+      mc:Ignorable="d" 
+      d:DesignHeight="800" d:DesignWidth="800"
+      Title="HookPage">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <StackPanel Orientation="Horizontal" Grid.Row="0" >
+            <TextBlock Text="进程选择：" TextAlignment="Center" Margin="10,10,0,0" FontSize="16"/>
+            <ComboBox
+                 Margin="20,0,0,0"
+                Width="450"
+                Height="30"
+                DropDownOpened="ComboBox_DropDownOpened"
+                pu:ComboBoxHelper.CornerRadius="15"
+        pu:ComboBoxHelper.HoverBackground="#1EB5B5B5"
+        pu:ComboBoxHelper.SelectedBackground="#32B5B5B5"  
+                MaxDropDownHeight="600"
+                x:Name="processSelect"
+                />
+
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" Grid.Row="1">
+            <TextBlock Text="钩子选择：" TextAlignment="Center" Margin="10,10,0,0" FontSize="16"/>
+            <ComboBox
+                  Margin="20,0,0,0"
+                Width="450"
+                Height="30"
+                x:Name="TextTractorHCODEData"
+                DropDownOpened="TextTractorHCODEData_DropDownOpened"
+                  MaxDropDownHeight="600"
+                pu:ComboBoxHelper.CornerRadius="15"
+        pu:ComboBoxHelper.HoverBackground="#1EB5B5B5"
+        pu:ComboBoxHelper.SelectedBackground="#32B5B5B5"  />
+
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" Grid.Row="2">
+
+            <Button  Height="30"
+Width="150"
+                      Margin="10,10,0,0" 
+                           FontFamily="simhei"
+                     Click="Button_Click"
+                     x:Name="injectProcessBtn"
+Content="注入进程"
+pu:ButtonHelper.ClickStyle="Sink"
+
+pu:ButtonHelper.ButtonStyle="Hollow"
+BorderBrush="#FF000000"
+Foreground="#FF000000"
+pu:ButtonHelper.HoverBrush="#000000"
+pu:ButtonHelper.CornerRadius="15" />
+            <Button  Height="30"
+Width="150"
+ Margin="10,10,0,0" 
+Content="插入特殊码"
+                     x:Name="insertHCODEBtn"
+                     FontFamily="simhei"
+                     Click="insertHCODEBtn_Click"
+pu:ButtonHelper.ClickStyle="Sink"
+
+pu:ButtonHelper.ButtonStyle="Hollow"
+BorderBrush="#FF000000"
+Foreground="#FF000000"
+pu:ButtonHelper.HoverBrush="#000000"
+pu:ButtonHelper.CornerRadius="15" />
+            <TextBox  Height="30"
+                      
+        Width="150"
+                      Margin="10,10,0,0" 
+                      x:Name="HOOKCODE"
+                            FontFamily="simhei"
+        pu:TextBoxHelper.FocusedBorderBrush="#1C1C1C"
+        pu:TextBoxHelper.FocusedShadowColor="#1C1C1C"
+        pu:TextBoxHelper.CornerRadius="15"
+        VerticalContentAlignment="Center" />
+
+            <CheckBox  Height="30"
+Content="监视剪切板"
+                          Margin="10,10,0,0" 
+                             FontFamily="simhei"
+                       Checked="watchClipboard_Checked"
+                       Unchecked="watchClipboard_Unchecked"
+                     x:Name="watchClipboard"
+pu:CheckBoxHelper.CheckBoxStyle="Switch"
+pu:CheckBoxHelper.BoxHeight="21"
+pu:CheckBoxHelper.BoxWidth="31.5"
+pu:CheckBoxHelper.CheckedBackground="#3F3F3F"
+pu:CheckBoxHelper.CornerRadius="3" />
+        </StackPanel>
+        <StackPanel Grid.Row="3" Orientation="Horizontal" VerticalAlignment="Top">
+            <Button  Height="30"
+            Width="150"
+                                  Margin="10,10,0,0" 
+                                       FontFamily="simhei"
+            Content="打开翻译窗口"
+                   x:Name="openTranslateWindowBtn"
+                     Click="openTranslateWindowBtn_Click"
+            pu:ButtonHelper.ClickStyle="Sink"
+
+            pu:ButtonHelper.ButtonStyle="Hollow"
+            BorderBrush="#FF000000"
+            Foreground="#FF000000"
+            pu:ButtonHelper.HoverBrush="#000000"
+            pu:ButtonHelper.CornerRadius="15" />
+            <CheckBox  Height="30"
+Content="去重复字符串"
+                          Margin="10,10,0,0" 
+                       Click="RepeatCheckBo_Click"
+                       Checked="RepeatCheckBo_Checked"
+                       Unchecked="RepeatCheckBo_Unchecked"
+                       x:Name="RepeatCheckBo"
+                             FontFamily="simhei"
+pu:CheckBoxHelper.CheckBoxStyle="Switch"
+pu:CheckBoxHelper.BoxHeight="21"
+pu:CheckBoxHelper.BoxWidth="31.5"
+pu:CheckBoxHelper.CheckedBackground="#3F3F3F"
+pu:CheckBoxHelper.CornerRadius="3" />
+            <ComboBox
+                  Margin="10,10,0,0"
+                Width="50"
+                Height="30"
+                Text="12"
+                x:Name="RepeatCountSelectComBox"
+                HorizontalContentAlignment="Center"
+                VerticalContentAlignment="Center"
+        pu:ComboBoxHelper.CornerRadius="15"        
+        pu:ComboBoxHelper.HoverBackground="#1EB5B5B5"
+        pu:ComboBoxHelper.SelectedBackground="#32B5B5B5" SelectedIndex="0"  >
+                <System:Int32>1</System:Int32>
+                <System:Int32>2</System:Int32>
+                <System:Int32>3</System:Int32>
+                <System:Int32>4</System:Int32>
+                <System:Int32>5</System:Int32>
+                <System:Int32>6</System:Int32>
+                <System:Int32>7</System:Int32>
+                <System:Int32>8</System:Int32>
+                <System:Int32>9</System:Int32>
+                <System:Int32>10</System:Int32>
+                <System:Int32>11</System:Int32>
+                <System:Int32>12</System:Int32>
+                <System:Int32>13</System:Int32>
+                <System:Int32>14</System:Int32>
+                <System:Int32>15</System:Int32>
+                <System:Int32>16</System:Int32>
+                <System:Int32>17</System:Int32>
+                <System:Int32>18</System:Int32>
+                <System:Int32>19</System:Int32>
+                <System:Int32>20</System:Int32>
+            </ComboBox>
+            <CheckBox  Height="30"
+Content="正则过滤"
+                          Margin="10,10,0,0" 
+                             FontFamily="simhei"
+                       Checked="UpdateRegexTextCheckBox_Checked"
+                       Unchecked="UpdateRegexTextCheckBox_Unchecked"
+                       x:Name="UpdateRegexTextCheckBox"
+pu:CheckBoxHelper.CheckBoxStyle="Switch"
+pu:CheckBoxHelper.BoxHeight="21"
+pu:CheckBoxHelper.BoxWidth="31.5"
+pu:CheckBoxHelper.CheckedBackground="#3F3F3F"
+pu:CheckBoxHelper.CornerRadius="3" />
+            <TextBox  Height="30"
+                      
+        Width="150"
+                      Margin="10,10,0,0" 
+                            FontFamily="simhei"
+                      x:Name="RegexTextBox"
+        pu:TextBoxHelper.FocusedBorderBrush="#1C1C1C"
+        pu:TextBoxHelper.FocusedShadowColor="#1C1C1C"
+        pu:TextBoxHelper.CornerRadius="15"
+        VerticalContentAlignment="Center" />
+        </StackPanel>
+        <StackPanel Grid.Row="4" Orientation="Horizontal" VerticalAlignment="Top">
+            <TextBox  Height="400"
+Width="600"
+                      Margin="10,10,0,0"
+                      x:Name="consoleTextBox"
+                      TextChanged="consoleTextBox_TextChanged"
+                                   TextWrapping="Wrap" VerticalAlignment="Top" 
+                VerticalContentAlignment="Top"
+pu:TextBoxHelper.FocusedBorderBrush="#B5B5B5"
+pu:TextBoxHelper.FocusedShadowColor="#B5B5B5"
+pu:TextBoxHelper.CornerRadius="15"
+pu:TextBoxHelper.IsClearButtonVisible="True"  />
+        </StackPanel>
+    </Grid>
+
+
+
+</Page>

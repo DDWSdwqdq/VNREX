@@ -1,0 +1,489 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{F8A6F19C-B283-46F1-8576-7A2B1F4EB8A7}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>UIBrowser</RootNamespace>
+    <AssemblyName>UIBrowser</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>VNREX.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Windows.Shell, Version=3.0.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Windows.Shell.3.0.1.0\lib\net40\Microsoft.Windows.Shell.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="Examples\MacLikeWindow.xaml.cs">
+      <DependentUpon>MacLikeWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Examples\NavbarWindow.xaml.cs">
+      <DependentUpon>NavbarWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Examples\NeteaseMusicWindow.xaml.cs">
+      <DependentUpon>NeteaseMusicWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="OCRPage.xaml.cs">
+      <DependentUpon>OCRPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TranslationPage.xaml.cs">
+      <DependentUpon>TranslationPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TTSPage.xaml.cs">
+      <DependentUpon>TTSPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="VNREX\Common\AbstractClient.cs" />
+    <Compile Include="VNREX\Common\AbstractModel.cs" />
+    <Compile Include="VNREX\Common\Credential.cs" />
+    <Compile Include="VNREX\Common\Exception\TencentCloudSDKException.cs" />
+    <Compile Include="VNREX\Common\Http\HttpConnection.cs" />
+    <Compile Include="VNREX\Common\JsonResponseErrModel.cs" />
+    <Compile Include="VNREX\Common\JsonResponseModel.cs" />
+    <Compile Include="VNREX\Common\Profile\ClientProfile.cs" />
+    <Compile Include="VNREX\Common\Profile\HttpProfile.cs" />
+    <Compile Include="VNREX\Common\Sign.cs" />
+    <Compile Include="VNREX\Global.cs" />
+    <Compile Include="VNREX\GlobalHotKey\GlobalHotkey.cs" />
+    <Compile Include="VNREX\GlobalHotKey\VNREXHotKey.cs" />
+    <Compile Include="VNREX\Hook\TextHook.cs" />
+    <Compile Include="VNREX\Hook\TranslateWindow.cs" />
+    <Compile Include="VNREX\NamePipe\NamePipeServer.cs" />
+    <Compile Include="VNREX\OCR\OCRServer.cs" />
+    <Compile Include="VNREX\Tmt\Models\ImageRecord.cs" />
+    <Compile Include="VNREX\Tmt\Models\ImageTranslateRequest.cs" />
+    <Compile Include="VNREX\Tmt\Models\ImageTranslateResponse.cs" />
+    <Compile Include="VNREX\Tmt\Models\ItemValue.cs" />
+    <Compile Include="VNREX\Tmt\Models\LanguageDetectRequest.cs" />
+    <Compile Include="VNREX\Tmt\Models\LanguageDetectResponse.cs" />
+    <Compile Include="VNREX\Tmt\Models\SpeechTranslateRequest.cs" />
+    <Compile Include="VNREX\Tmt\Models\SpeechTranslateResponse.cs" />
+    <Compile Include="VNREX\Tmt\Models\TextTranslateBatchRequest.cs" />
+    <Compile Include="VNREX\Tmt\Models\TextTranslateBatchResponse.cs" />
+    <Compile Include="VNREX\Tmt\Models\TextTranslateRequest.cs" />
+    <Compile Include="VNREX\Tmt\Models\TextTranslateResponse.cs" />
+    <Compile Include="VNREX\Tmt\V20180321\TmtClient.cs" />
+    <Compile Include="VNREX\TranslateController.cs" />
+    <Compile Include="VNREX\Translation\BaiduTanslate.cs" />
+    <Compile Include="VNREX\Translation\CaiYunTranslate.cs" />
+    <Compile Include="VNREX\Translation\TencentTanslate.cs" />
+    <Compile Include="VNREX\Translation\YouDaoTranslateFreeOld.cs" />
+    <Compile Include="VNREX\TTS\VoiceRoid2.cs" />
+    <Compile Include="VNRHomeWindow.xaml.cs">
+      <DependentUpon>VNRHomeWindow.xaml</DependentUpon>
+    </Compile>
+    <Page Include="Examples\MacLikeWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Examples\NavbarWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Examples\NeteaseMusicWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="HomeWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="HookPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Helpers\Helper.cs" />
+    <Compile Include="HomeWindow.xaml.cs">
+      <DependentUpon>HomeWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="HookPage.xaml.cs">
+      <DependentUpon>HookPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="OCRPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PartialViews\Custom\MultiComboBoxView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="PartialViews\Custom\PendingBoxView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="PartialViews\Custom\PaginationView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="PartialViews\Custom\WaterfallViewerView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="PartialViews\Custom\CarouselView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="PartialViews\Custom\ColorPickerView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="PartialViews\Custom\ColorSelectorView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="PartialViews\Custom\BadgeView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="PartialViews\Custom\DropDownView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="PartialViews\Custom\DateTimePickerView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="PartialViews\Custom\LoadingView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="PartialViews\Custom\CalendarView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="PartialViews\Custom\NoticeView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="PartialViews\Custom\MessageBoxXView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="PartialViews\Helpers\AnimationHelperView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="PartialViews\Native\ContextMenuView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="PartialViews\Native\ExpanderView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="PartialViews\Native\MenuView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="PartialViews\Native\DataGridView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="PartialViews\Native\SliderView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="PartialViews\Native\ComboBoxView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="PartialViews\Native\ProgressBarView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="PartialViews\Native\RadioButtonView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="PartialViews\Native\CheckBoxView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="PartialViews\Native\PasswordBoxView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="PartialViews\Native\TabControlView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="PartialViews\Native\GroupBoxView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="PartialViews\Native\TextBoxView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="PartialViews\Native\TreeViewView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="PartialViews\Custom\WindowXView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="PartialViews\Native\ButtonView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PartialViews\OverviewView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Resources\Styles.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="TranslationPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="TTSPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="VNRHomeWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="PartialViews\Native\ExpanderView.xaml.cs">
+      <DependentUpon>ExpanderView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PartialViews\Native\GroupBoxView.xaml.cs">
+      <DependentUpon>GroupBoxView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModels\MainWindowViewModel.cs" />
+    <Compile Include="Models\TreeViewItemModel.cs" />
+    <Compile Include="PartialViews\Custom\MultiComboBoxView.xaml.cs">
+      <DependentUpon>MultiComboBoxView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PartialViews\Custom\PendingBoxView.xaml.cs">
+      <DependentUpon>PendingBoxView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PartialViews\Custom\PaginationView.xaml.cs">
+      <DependentUpon>PaginationView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PartialViews\Custom\WaterfallViewerView.xaml.cs">
+      <DependentUpon>WaterfallViewerView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PartialViews\Custom\CarouselView.xaml.cs">
+      <DependentUpon>CarouselView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PartialViews\Custom\ColorPickerView.xaml.cs">
+      <DependentUpon>ColorPickerView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PartialViews\Custom\ColorSelectorView.xaml.cs">
+      <DependentUpon>ColorSelectorView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PartialViews\Custom\BadgeView.xaml.cs">
+      <DependentUpon>BadgeView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PartialViews\Custom\DropDownView.xaml.cs">
+      <DependentUpon>DropDownView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PartialViews\Custom\DateTimePickerView.xaml.cs">
+      <DependentUpon>DateTimePickerView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PartialViews\Custom\LoadingView.xaml.cs">
+      <DependentUpon>LoadingView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PartialViews\Custom\CalendarView.xaml.cs">
+      <DependentUpon>CalendarView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PartialViews\Custom\NoticeView.xaml.cs">
+      <DependentUpon>NoticeView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PartialViews\Custom\MessageBoxXView.xaml.cs">
+      <DependentUpon>MessageBoxXView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PartialViews\Helpers\AnimationHelperView.xaml.cs">
+      <DependentUpon>AnimationHelperView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PartialViews\Native\ContextMenuView.xaml.cs">
+      <DependentUpon>ContextMenuView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PartialViews\Native\MenuView.xaml.cs">
+      <DependentUpon>MenuView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PartialViews\Native\DataGridView.xaml.cs">
+      <DependentUpon>DataGridView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PartialViews\Native\SliderView.xaml.cs">
+      <DependentUpon>SliderView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PartialViews\Native\ComboBoxView.xaml.cs">
+      <DependentUpon>ComboBoxView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PartialViews\Native\ProgressBarView.xaml.cs">
+      <DependentUpon>ProgressBarView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PartialViews\Native\RadioButtonView.xaml.cs">
+      <DependentUpon>RadioButtonView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PartialViews\Native\CheckBoxView.xaml.cs">
+      <DependentUpon>CheckBoxView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PartialViews\Native\PasswordBoxView.xaml.cs">
+      <DependentUpon>PasswordBoxView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PartialViews\Native\TabControlView.xaml.cs">
+      <DependentUpon>TabControlView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PartialViews\Native\TextBoxView.xaml.cs">
+      <DependentUpon>TextBoxView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PartialViews\Native\TreeViewView.xaml.cs">
+      <DependentUpon>TreeViewView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PartialViews\Custom\WindowXView.xaml.cs">
+      <DependentUpon>WindowXView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PartialViews\Native\ButtonView.xaml.cs">
+      <DependentUpon>ButtonView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PartialViews\OverviewView.xaml.cs">
+      <DependentUpon>OverviewView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resource.zh-CN.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resource.zh-CN.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Resource1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resource.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resource.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resource1.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="app.config" />
+    <EmbeddedResource Include="Properties\Resource.zh-CN.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resource.zh-CN.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <Resource Include="Resources\NeteaseExample\iconfont.ttf" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="PartialViews\Template\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\head.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Net45\Panuon.UI.Silver\Panuon.UI.Silver.csproj">
+      <Project>{461fe59d-57b8-4599-8e7d-439e27a2bbb2}</Project>
+      <Name>Panuon.UI.Silver</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="VNREX.ico" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+</Project>

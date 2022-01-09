@@ -1,0 +1,80 @@
+﻿<Page x:Class="UIBrowser.OCRPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:pu="clr-namespace:Panuon.UI.Silver;assembly=Panuon.UI.Silver"
+      xmlns:local="clr-namespace:UIBrowser"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="OCRPage">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <StackPanel Orientation="Horizontal" Grid.Row="0">
+            <Button  Height="30"
+Width="150"
+                      Margin="10,10,0,0" 
+                    Click="SelecteScreenAreaBtn_Click"                                         
+                           FontFamily="simhei"
+                    
+                     x:Name="SelecteScreenAreaBtn"
+Content="选取区域"
+pu:ButtonHelper.ClickStyle="Sink"
+
+pu:ButtonHelper.ButtonStyle="Hollow"
+BorderBrush="#FF000000"
+Foreground="#FF000000"
+pu:ButtonHelper.HoverBrush="#000000"
+pu:ButtonHelper.CornerRadius="15" />
+            <Button  Height="30"
+Width="150"
+                      Margin="10,10,0,0" 
+                           FontFamily="simhei"
+                    Click="StartOCRBtn_Click"
+                     x:Name="StartOCRBtn"
+Content="部署OCR"
+pu:ButtonHelper.ClickStyle="Sink"
+
+pu:ButtonHelper.ButtonStyle="Hollow"
+BorderBrush="#FF000000"
+Foreground="#FF000000"
+pu:ButtonHelper.HoverBrush="#000000"
+pu:ButtonHelper.CornerRadius="15" />
+            <Button  Height="30"
+Width="150"
+                      Margin="10,10,0,0" 
+                           FontFamily="simhei"
+                 Click="OpenOCRClientBtn_Click"
+                  x:Name="OpenOCRClientBtn"
+Content="打开客户端"
+pu:ButtonHelper.ClickStyle="Sink"
+
+pu:ButtonHelper.ButtonStyle="Hollow"
+BorderBrush="#FF000000"
+Foreground="#FF000000"
+pu:ButtonHelper.HoverBrush="#000000"
+pu:ButtonHelper.CornerRadius="15" IsEnabled="False" />
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" Grid.Row="1">
+            <TextBox  Height="300"
+                Width="600"
+                                      Margin="10,10,0,0"
+                                      x:Name="OCRConsoleTextBox"
+                                            TextChanged="OCRConsoleTextBox_TextChanged"
+                                                   TextWrapping="Wrap" VerticalAlignment="Top" 
+                                VerticalContentAlignment="Top"
+                pu:TextBoxHelper.FocusedBorderBrush="#B5B5B5"
+                pu:TextBoxHelper.FocusedShadowColor="#B5B5B5"
+                pu:TextBoxHelper.CornerRadius="15"
+                pu:TextBoxHelper.IsClearButtonVisible="True"  />
+        </StackPanel>
+    </Grid>
+</Page>

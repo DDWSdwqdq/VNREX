@@ -6,3 +6,5 @@ GAL翻译器、离线OCR、离线TTS
 
 # unity游戏文本提取 下载对应游戏的压缩包覆盖游戏的游戏名_Data\Managed\Assembly-CSharp.dll文件 使用对应翻译器的监视剪切板即可提取游戏文本
 高速下载 https://cloud.acgc.win/s/2mr3c4
+
+# based on https://github.com/Artikash/Textractor

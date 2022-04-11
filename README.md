@@ -9,3 +9,6 @@ GAL翻译器、离线OCR、离线TTS
 
 
 # based on https://github.com/Artikash/Textractor
+
+# 使用教程B站教程
+https://www.bilibili.com/video/BV14Y411p7jD?spm_id_from=333.999.0.0

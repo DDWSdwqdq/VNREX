@@ -1,5 +1,6 @@
 # VNREX
 GAL翻译器、离线OCR、离线TTS
+百度网盘 https://pan.baidu.com/s/1aDaKYD96wW0z9ezfvdUfOA 提取码：fo2c
 高速下载 https://cloud.acgc.win/s/ZAdxHq 
 # VoiceRoid2 TTS语音合成工具安装程序及补丁
 高速下载 https://cloud.acgc.win/s/9JnBTX

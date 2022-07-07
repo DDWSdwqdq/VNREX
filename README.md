@@ -6,9 +6,8 @@ GAL翻译器、离线OCR、离线TTS
 高速下载 https://cloud.acgc.win/s/9JnBTX
 百度网盘   https://pan.baidu.com/s/1aDaKYD96wW0z9ezfvdUfOA   提取码：fo2c
 # RenPy游戏文本提取下载下面的脚本,解压到游戏game目录下,直接打开游戏, 使用对应翻译器的监视剪切板即可提取游戏文本
-链接：https://pan.baidu.com/s/1IcQdkPFVfLOkdG41P5DD3A
-提取码：y2cf
-
+链接：https://pan.baidu.com/s/1xfAkVmG3-FeGAmJGFrAvKw 
+提取码：6ura
 
 # based on https://github.com/Artikash/Textractor
 
